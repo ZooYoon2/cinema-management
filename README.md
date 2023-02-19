@@ -60,6 +60,7 @@
 
   #### (2) 영화
   <img src="https://user-images.githubusercontent.com/91615180/219938600-6ab51277-0188-4e51-9c01-742a9557f554.PNG" width="640"/>
+  <img src="https://user-images.githubusercontent.com/91615180/219939044-ab09c70b-5843-49ca-9150-d5279edca3ea.PNG" width="640"/>
 
   #### (3) 로그인
   <img src="https://user-images.githubusercontent.com/91615180/219938605-c6ccfd26-2516-4cb2-bd9c-95cf1f220831.PNG" width="640"/>
@@ -68,6 +69,7 @@
   #### (4) 예매
   <img src="https://user-images.githubusercontent.com/91615180/219938603-645354d5-a95e-42c6-b13d-e66bb4f24486.PNG" width="640"/>
   <img src="https://user-images.githubusercontent.com/91615180/219938620-1c0d35f9-59a0-4945-9135-85f1ab75737d.PNG" width="640"/>
+  <img src="https://user-images.githubusercontent.com/91615180/219938981-d3901635-ebc1-464a-a11a-54013c9b32e3.PNG" width="640"/>
 
   #### (5) 관리자
   ##### (5-1) 영화관리
