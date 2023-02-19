@@ -1,0 +1,250 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C7C9971E-98D8-4BAD-BF89-3D02E55C635B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>MovieApp</RootNamespace>
+    <AssemblyName>MovieApp</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>1</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin\addschedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\addschedule.Designer.cs">
+      <DependentUpon>addschedule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\admin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\admin.Designer.cs">
+      <DependentUpon>admin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\user.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\user.Designer.cs">
+      <DependentUpon>user.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\waituser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\waituser.Designer.cs">
+      <DependentUpon>waituser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User\buy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User\buy.Designer.cs">
+      <DependentUpon>buy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\deleteschedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\deleteschedule.Designer.cs">
+      <DependentUpon>deleteschedule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\research.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\research.Designer.cs">
+      <DependentUpon>research.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\movies.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\movies.Designer.cs">
+      <DependentUpon>movies.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\schedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\schedule.Designer.cs">
+      <DependentUpon>schedule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\theater.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\theater.Designer.cs">
+      <DependentUpon>theater.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="User\info.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User\info.Designer.cs">
+      <DependentUpon>info.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User\moviechart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User\moviechart.designer.cs">
+      <DependentUpon>moviechart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User\OK.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User\OK.Designer.cs">
+      <DependentUpon>OK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User\seat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User\seat.Designer.cs">
+      <DependentUpon>seat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User\signin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User\signin.Designer.cs">
+      <DependentUpon>signin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="main.Designer.cs">
+      <DependentUpon>main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User\home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User\home.Designer.cs">
+      <DependentUpon>home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="User\signup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User\signup.Designer.cs">
+      <DependentUpon>signup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User\ticket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User\ticket.Designer.cs">
+      <DependentUpon>ticket.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Admin\addschedule.resx">
+      <DependentUpon>addschedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\admin.resx">
+      <DependentUpon>admin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\user.resx">
+      <DependentUpon>user.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\waituser.resx">
+      <DependentUpon>waituser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User\buy.resx">
+      <DependentUpon>buy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\deleteschedule.resx">
+      <DependentUpon>deleteschedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\movies.resx">
+      <DependentUpon>movies.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\research.resx">
+      <DependentUpon>research.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\schedule.resx">
+      <DependentUpon>schedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\theater.resx">
+      <DependentUpon>theater.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User\info.resx">
+      <DependentUpon>info.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User\moviechart.resx">
+      <DependentUpon>moviechart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User\OK.resx">
+      <DependentUpon>OK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User\seat.resx">
+      <DependentUpon>seat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User\signin.resx">
+      <DependentUpon>signin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User\home.resx">
+      <DependentUpon>home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="main.resx">
+      <DependentUpon>main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User\signup.resx">
+      <DependentUpon>signup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User\ticket.resx">
+      <DependentUpon>ticket.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

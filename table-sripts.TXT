@@ -1,0 +1,82 @@
+CREATE TABLE 할인율 (
+	등급 	VARCHAR(10) 	NOT NULL ,
+   	할인율 	NUMBER(3) 	NOT NULL,
+       	CONSTRAINT 할인율_PK PRIMARY KEY (등급),
+	CONSTRAINT 할인율_CK CHECK (등급 IN ('VIP', 'GOLD', 'SILVER')));
+
+CREATE TABLE 회원 (
+	회원번호 		NUMBER(4) 	NOT NULL,
+	회원아이디 	VARCHAR(30)	NOT NULL,
+	회원비밀번호 	VARCHAR(256)	NOT NULL,
+   	회원이름 		VARCHAR(20) 	NOT NULL,
+   	휴대전화 		VARCHAR(15) 	NOT NULL,
+   	등급 		VARCHAR(10) 	DEFAULT  'SILVER'  NOT NULL,
+   	카드번호 		VARCHAR(25) 	NOT NULL,
+   	CONSTRAINTS 회원_PK PRIMARY KEY (회원번호,회원아이디),
+       	CONSTRAINTS 회원_등급_FK FOREIGN KEY(등급) REFERENCES  할인율(등급) );
+
+CREATE TABLE 승인대기회원(
+	회원이름 	 	VARCHAR(20) 	NOT NULL,
+	회원아이디 	VARCHAR(30)	NOT NULL,
+	회원비밀번호 	VARCHAR(256)	NOT NULL,
+	휴대전화 		VARCHAR(15) 	NOT NULL,
+	카드번호 		VARCHAR(25) 	NOT NULL,
+	CONSTRAINTS 승인대기회원_PK PRIMARY KEY (회원아이디) );
+
+CREATE SEQUENCE 회원_seq
+	INCREMENT BY 1
+	START WITH 1
+	MINVALUE 1
+	MAXVALUE 9999;
+DROP SEQUENCE 회원_seq;
+
+CREATE TABLE 영화 (
+	영화번호 		NUMBER(4)  	NOT NULL,
+	영화제목 		VARCHAR2(100) 	NOT NULL,
+	영화감독 		VARCHAR2(100) 	NOT NULL,
+	주연배우 		VARCHAR2(256) 	NOT NULL,
+	포스터  		BLOB,
+   	CONSTRAINTS 영화_PK PRIMARY KEY (영화번호));
+CREATE SEQUENCE 영화_seq
+	INCREMENT BY 1
+	START WITH 1
+	MINVALUE 1
+	MAXVALUE 9999;
+DROP SEQUENCE 영화_seq;
+INSERT INTO 영화 (영화_seq.NEXTVAL, 영화제목, 영화감독, 주연배우, 포스터)
+
+CREATE TABLE 상영관 (
+	상영관번호 	VARCHAR(10)	NOT NULL,
+	상영관형태 	VARCHAR(10) 	NOT NULL,
+       	CONSTRAINT 상영관_PK PRIMARY KEY (상영관번호),
+	CONSTRAINT 상영관_CK CHECK (상영관형태 IN ('2D', '3D', 'X-Screen')));
+
+CREATE TABLE 상영관좌석 (
+	상영관번호 	VARCHAR(10) 	NOT NULL,
+	행번호 		VARCHAR(5) 	NOT NULL,
+	위치번호 		VARCHAR(5) 	NOT NULL,
+   	CONSTRAINTS 상영관좌석_PK PRIMARY KEY (상영관번호, 행번호, 위치번호),
+       	CONSTRAINTS 상영관좌석_상영관번호_FK FOREIGN KEY(상영관번호) REFERENCES  상영관(상영관번호));
+
+CREATE TABLE 상영스케줄 (
+       	영화번호 	       	NUMBER(4) 	NOT NULL,
+       	상영시간 	       	DATE 	       	NOT NULL,
+       	상영관번호 	VARCHAR(10) 	NOT NULL,
+       	요금 	       	VARCHAR(10) 	NOT NULL,
+   	CONSTRAINTS 상영스케줄_PK PRIMARY KEY (영화번호, 상영시간, 상영관번호),
+       	CONSTRAINTS 상영스케줄_상영관번호_FK FOREIGN KEY(상영관번호) REFERENCES  상영관(상영관번호),
+       	CONSTRAINTS 상영스케줄_영화번호_FK FOREIGN KEY(영화번호) REFERENCES  영화(영화번호));
+
+CREATE TABLE 예매좌석 (
+   	영화번호 	   	NUMBER(4)	NOT NULL,
+   	상영시간 	   	DATE	   	NOT NULL,
+   	상영관번호 	VARCHAR(10)	NOT NULL,
+   	행번호 	   	VARCHAR(5)	NOT NULL,
+   	위치번호 	   	VARCHAR(5)	NOT NULL,
+   	회원번호 	   	NUMBER(4)	NOT NULL,
+   	예매일시 	   	DATE	   	NOT NULL,
+   	금액 	   	VARCHAR(10)	NOT NULL,
+   	CONSTRAINTS 예매좌석_PK PRIMARY KEY (영화번호, 상영시간, 상영관번호, 행번호, 위치번호, 회원번호),
+       	CONSTRAINTS  예매좌석_상영스케줄_FK FOREIGN KEY(영화번호, 상영시간, 상영관번호) REFERENCES  상영스케줄(영화번호, 상영시간, 상영관번호),
+       	CONSTRAINTS 예매좌석_상영관좌석_FK FOREIGN KEY(상영관번호, 행번호, 위치번호) REFERENCES  상영관좌석(상영관번호, 행번호, 위치번호));
+	
